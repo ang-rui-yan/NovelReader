@@ -1,0 +1,14 @@
+<MenuScreen@Screen>
+	BoxLayout:
+		orientation: 'vertical'
+		
+		MDLabel:
+			text: 'Hello World'
+			halign: 'center'
+			
+		MDRectangleFlatButton:
+			text: 'Novels'
+			halign: 'center'
+			on_press:
+				root.manager.transition.direction = 'left'
+				root.manager.current = 'directory'

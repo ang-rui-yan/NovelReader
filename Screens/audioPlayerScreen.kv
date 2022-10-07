@@ -1,0 +1,35 @@
+<AudioPlayerScreen@Screen>	
+	BoxLayout:
+		orientation: 'vertical'
+		
+		GridLayout:
+			cols: 1
+			size_hint_y: .7
+			
+			MDLabel:
+				id: lblChapterTitle
+			
+		GridLayout:
+			cols: 1
+			size_hint_y: .3
+			
+			MDSlider:
+				id: audio_seeker
+				
+			GridLayout:
+				cols: 3
+				
+				MDIconButton:
+					icon:''
+					size_hint: .3,.3
+					
+				MDIconButton:
+					id: btnPlayPause
+					icon:'pause'
+					size_hint: .3,.3
+					on_press:
+						root.play_pause()
+					
+				MDIconButton:
+					icon:''
+					size_hint: .3,.3

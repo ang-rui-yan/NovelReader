@@ -1,0 +1,66 @@
+#:import ScrollEffect  kivy.effects.scroll.ScrollEffect
+
+<NovelReaderScreen@Screen>
+
+	BoxLayout:
+		orientation: 'vertical'
+		
+		MDLabel:
+			id: lblChapterTitle
+			text: "Title"
+			size_hint_y: .08
+			padding: 30,0
+			bold: True
+			
+		ScrollView:
+			id: scrlv
+			effect_cls: ScrollEffect
+				
+			TextInput:
+				id: disp_text
+				size_hint: 1, None
+				height: max( (len(self._lines)+1) * self.line_height, scrlv.height)
+				padding: 20,0
+				spacing: '50dp'
+				font_size: '16sp'
+				border: [0,0,0,0]
+				readonly: True
+				use_bubble: False
+				use_handles: False
+				focus: False
+				foreground_color: 0,0,0,1
+				disabled_foreground_color: self.foreground_color
+				background_normal: ''
+				background_disabled_normal: self.background_normal
+				disabled_color: 0,0,0,1
+				on_double_tap:
+					root.set_sidebar_visibility()
+				
+		BoxLayout:
+			id: controlsLayout
+			orientation: "horizontal"
+			size_hint_y: None		
+				
+			MDIconButton:
+				id: btnPrev
+				icon: "arrow-left"
+				size_hint: .3, None
+				size: self.parent.size
+				on_press:
+					root.go_previous()
+					
+			MDIconButton:
+				id: btnAudioPlayer
+				icon: "music-circle"
+				size_hint: .3, None
+				size: self.parent.size
+				on_press:
+					root.go_audio_player()
+				
+			MDIconButton:
+				id: btnNext
+				icon: "arrow-right"
+				size_hint: .3, None
+				size: self.parent.size
+				on_press:
+					root.go_next()

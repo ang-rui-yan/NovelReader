@@ -1,0 +1,11 @@
+#: import SlideTransition kivy.uix.screenmanager.SlideTransition
+#: include Screens/novelDirectoryScreen.kv
+#: include Screens/chapterListScreen.kv
+#: include Screens/novelReaderScreen.kv
+#: include Screens/audioPlayerScreen.kv
+
+WindowManager:
+	transition: SlideTransition(direction='left')
+	
+    MainScreen:
+    	name: 'main'

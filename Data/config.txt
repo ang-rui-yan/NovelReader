@@ -1,0 +1,5 @@
+website|<insert website here>
+chapterList|<insert website here>/{0}.html?page={1}
+overview|<insert website here>/{0}.html
+chapter|<insert website here>/{0}/chapter-{1}.html
+novels|Novels
